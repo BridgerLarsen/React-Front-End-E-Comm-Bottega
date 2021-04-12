@@ -7,10 +7,14 @@ class SignIn extends Component {
         super();
     }
 
+    handleSubmit(fields) {
+        console.log('hello');
+    }
+
     render() {
         return (
             <div className="sign-in">
-                <SignInForm className='sign-in__form'/>
+                <SignInForm className='sign-in__form' handleSubmit={this.handleSubmit}/>
             </div>
         )
     }
