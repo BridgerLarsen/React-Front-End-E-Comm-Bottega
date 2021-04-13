@@ -2,3 +2,9 @@
     grid-row: content-s/content-e;
     grid-column: s/e;
 }
+
+.sign-in-form {
+    &__line {
+        border-top: 1px solid #ccc;
+    }
+}
