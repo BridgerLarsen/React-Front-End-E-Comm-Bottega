@@ -9,7 +9,7 @@ class SignIn extends Component {
     }
 
     handleSubmit(fields) {
-        console.log('hello');
+        console.log(fields);
     }
 
     render() {

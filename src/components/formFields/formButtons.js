@@ -6,11 +6,15 @@ class FormButtons extends Component {
     }
 
     render() {
-        const { className, type, title, input, onClick} = this.props
+        const { className, type, title, input, onClick, short} = this.props
 
         return (
             <div className={`${className} form-button`}>
-                <button className="form-button__button" type={type} {...input} onClick={onClick}>
+                <button className={`form-button__button ${short ? 'form-button__back-button' : null}`} 
+                    type={type} 
+                    {...input} 
+                    onClick={onClick}
+                >
                     {title}
                 </button>
             </div>
