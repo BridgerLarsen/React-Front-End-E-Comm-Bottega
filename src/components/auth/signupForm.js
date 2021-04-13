@@ -14,21 +14,18 @@ class SignUpForm extends Component {
 
     render() {
 
-        const links = [
+        const info = [
             {
                 _id: 0,
-                title: 'Not registered? Create account here',
-                onClick: () => history.push('/signup')
+                title: 'At least 6 characters'
             },
             {
                 _id: 1,
-                title: 'Forgot account email?',
-                onClick: () => console.log('Forgot Email')
+                title: 'At least one number'
             },
             {
                 _id: 2,
-                title: 'Forgot Password?',
-                onClick: () => console.log('Forgot Password')
+                title: 'At least one Symbol'
             }
         ]
 
@@ -73,10 +70,10 @@ class SignUpForm extends Component {
                 <div className="sign-up-form__line"></div>
 
                 <Field
-                    className="sign-up-form__login"
-                    onClick={() => { console.log('submiting') }}
-                    type="login"
-                    title="Login"
+                    className="sign-up-form__create"
+                    onClick={() => { history.push('/account') }}
+                    type="submit"
+                    title="Create"
                     name="login"
                     component={FormButtons}
                 />
@@ -91,7 +88,7 @@ class SignUpForm extends Component {
                     component={FormButtons}
                 />
 
-                <Details className="sign-up-form__details" title="Quick Links" links={links} />
+                <Details className="sign-up-form__details" title="Password Requirements" links={info} />
             </form> 
         )
     }
