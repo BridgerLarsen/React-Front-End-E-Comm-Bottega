@@ -4,24 +4,8 @@ import {
 } from '../actions/types';
 
 const INITIAL_STATE = {
-    headerLinks: [
-        {
-            title: 'Shop'
-        },
-        {
-            title:'Logout'
-        }
-    ],
-    navBarLinks: [
-        {
-            title: 'Purchase History',
-            active: true
-        },
-        {
-            title: 'Account',
-            active: false
-        }
-    ]
+    headerLinks: [],
+    navBarLinks: []
 }
 
 export default function(state = INITIAL_STATE, action) {
@@ -34,7 +18,7 @@ export default function(state = INITIAL_STATE, action) {
         case SET_NAVBAR_LINKS:
             return {
                 ...state,
-                headerLinks: action.payload
+                navBarLinks: action.payload
             }
         default: return state;
     }

@@ -13,3 +13,5 @@ class AccountInfo extends Component {
         )
     }
 }
+
+export default AccountInfo;
