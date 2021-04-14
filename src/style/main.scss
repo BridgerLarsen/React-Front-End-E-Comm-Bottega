@@ -11,11 +11,11 @@ html {
 }
 
 body {
-    font-family: "Open Sans";
+    font-family: 'Open Sans', sans-serif;
     color: #808080;
 }
 
-
+@import 'variables.scss';
 
 @import 'layout.scss';
 @import 'headerNavbar.scss';

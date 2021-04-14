@@ -25,7 +25,7 @@
 
     &__line {
         grid-row: line-s/line-e;
-        border-top: 1px solid #ccc;
+        border-top: 1px solid $gray;
     }
 
     &__login {
