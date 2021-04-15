@@ -6,12 +6,12 @@ class FormFields extends Component {
     }
 
     render() {
-        const { title, className, type, placholder, input } = this.props;
+        const { title, className, type, placeholder, input } = this.props;
 
         return (
             <div className={`${className} form-input`}>
                 <label className='form-input__label'>{title}</label>
-                <input className="form-input__input" type={type} placholder={placholder} {...input} />
+                <input className="form-input__input" type={type} placeholder={placeholder} {...input} />
             </div>
         )
     }

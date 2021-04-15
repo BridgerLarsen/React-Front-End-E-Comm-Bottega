@@ -14,9 +14,18 @@ class AccountInformationForm extends Component {
 
     render() {
         return (
-            <form className={`${this.props.className} sign-in-form`} onSubmit={this.props.handleSubmit}>
+            <form className={`${this.props.className} account-information-form`} onSubmit={this.props.handleSubmit}>
                 <Field 
-                    className="sign-in-form__email" 
+                    className="account-information-form__name" 
+                    type="name" 
+                    title="Name" 
+                    placeholder="Name" 
+                    name="name" 
+                    component={FormInputs} 
+                />
+
+                <Field 
+                    className="account-information-form__email" 
                     type="email" 
                     title="Email" 
                     placeholder="Email" 
@@ -25,24 +34,53 @@ class AccountInformationForm extends Component {
                 />
 
                 <Field 
-                    className="sign-in-form__password" 
-                    type="password" 
-                    title="Password" 
-                    placeholder="Password" 
-                    name="password" 
+                    className="account-information-form__street-address" 
+                    type="address" 
+                    title="Street Address" 
+                    placeholder="Street Address" 
+                    name="address" 
                     component={FormInputs} 
                 />
 
-                <div className="sign-in-form__line"></div>
+                <Field 
+                    className="account-information-form__city" 
+                    type="city" 
+                    title="City" 
+                    placeholder="City" 
+                    name="city" 
+                    component={FormInputs} 
+                />
 
-                <Field
-                    className="sign-in-form__login"
+                <Field 
+                    className="account-information-form__state" 
+                    type="state" 
+                    title="State" 
+                    placeholder="State" 
+                    name="state" 
+                    component={FormInputs} 
+                />
+
+                <Field 
+                    className="account-information-form__zipcode" 
+                    type="zipcode" 
+                    title="Zipcode" 
+                    placeholder="Zipcode" 
+                    name="zipcode" 
+                    component={FormInputs} 
+                />
+
+                
+                
+                
+                
+                {/* <Field
+                    className="account-information-form__login"
                     onClick={() => { history.push('/account') }}
                     type="login"
                     title="Login"
                     name="login"
                     component={FormButtons}
-                />
+                /> */}
             </form> 
         )
     }

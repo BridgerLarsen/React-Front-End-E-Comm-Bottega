@@ -16,13 +16,16 @@ body {
 }
 
 @import 'variables.scss';
+@import 'mixins.scss';
 
 @import 'layout.scss';
 @import 'headerNavbar.scss';
 @import './auth/signin.scss';
 @import './auth/signup.scss';
+
 @import './accounts/account.scss';
 @import './accounts//purchaseHistory.scss';
+@import './accounts//account-information.scss';
 
 @import './pageTitle.scss';
 @import './formFields.scss';
