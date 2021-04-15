@@ -8,13 +8,91 @@ export function fetchUserPurchases() {
         payload: [
             {
                 _id: 0,
-                title: 'Purchase 1',
-                amount: 7.06
+                total: 7.06,
+                orderNumber: 'AO0644SDFS',
+                orderDate: new Date(),
+                creditCard: '-0000',
+                user: {
+                    name: 'Jordan Hudgens',
+                    shippingAddress: '1234 West State Street'
+                }
             },
             {
                 _id: 1,
-                title: 'Purchase 2',
-                amount: 14.65
+                total: 4.02,
+                orderNumber: 'SN04242dFS',
+                orderDate: new Date(),
+                creditCard: '-0000',
+                user: {
+                    name: 'Kristine Hudgens',
+                    shippingAddress: '1234 South State Street'
+                }
+            },
+            {
+                _id: 2,
+                total: 18.44,
+                orderNumber: 'DF224545FS',
+                orderDate: new Date(),
+                creditCard: '-0000',
+                user: {
+                    name: 'Jon Snow',
+                    shippingAddress: '5486 Any Street'
+                }
+            },
+            {
+                _id: 3,
+                total: 45.96,
+                orderNumber: 'A20478Y45FD',
+                orderDate: new Date(),
+                creditCard: '-0000',
+                user: {
+                    name: 'Albert Einstein',
+                    shippingAddress: '490 South 200 East'
+                }
+            },
+            {
+                _id: 4,
+                total: 9.85,
+                orderNumber: 'DU5G372dFS',
+                orderDate: new Date(),
+                creditCard: '-0000',
+                user: {
+                    name: 'Bridger Larsen',
+                    shippingAddress: '700 East Canal Blvd'
+                }
+            },
+            {
+                _id: 5,
+                total: 5.55,
+                orderNumber: 'HG1DSD8UY3',
+                orderDate: new Date(),
+                creditCard: '-0000',
+                user: {
+                    name: 'Max Nielson',
+                    shippingAddress: '1234 South State Street'
+                }
+            },
+            {
+                _id: 6,
+                total: 2.05,
+                orderNumber: 'ASDK456FFS',
+                orderDate: new Date(),
+                creditCard: '-0000',
+                user: {
+                    name: 'Coll Wold',
+                    shippingAddress: '1234 South State Street'
+                }
+            },
+            {
+                _id: 7,
+                total: 9.85,
+                orderNumber: 'A5FK4SDF5S',
+                orderDate: new Date(),
+                creditCard: '-0000',
+                user: {
+                    name: 'David Bunker',
+                    shippingAddress: '1234 South State Street'
+                }
             }
         ]
     })

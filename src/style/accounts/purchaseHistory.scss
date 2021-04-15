@@ -1,4 +1,17 @@
 .purchase-history {
+    .purchases {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, 80px);
+        width: 360px;
+        grid-gap: 10px;
+    }
+
+    &__content {
+        margin: 37px 0px;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+
     &__page-title {
         border-bottom: 1px solid $gray;
     }
