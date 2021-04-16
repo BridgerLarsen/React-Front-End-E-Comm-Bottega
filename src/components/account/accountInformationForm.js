@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { reduxForm, Field} from 'redux-form';
 
 import FormInputs from '../formFields/formInputs';
-import { LongGrayButton } from '../formFields/formButtons';
+import { LongGrayButton, FormButtons } from '../formFields/formButtons';
 
 class AccountInformationForm extends Component {
     constructor() {
@@ -14,9 +14,15 @@ class AccountInformationForm extends Component {
     }
 
     toggleChangePasswordFields() {
-        this.setState({
-            showPasswords: true
-        })
+        if (!this.state.showPasswords) {
+            this.setState({
+                showPasswords: true
+            })
+        } else if (this.state.showPasswords) {
+            this.setState({
+                showPasswords: false
+            })
+        }
     }
 
     render() {
@@ -86,6 +92,7 @@ class AccountInformationForm extends Component {
                             placeholder="Current Password" 
                             name="current" 
                             component={FormInputs} 
+                            key={0}
                         />,
                         
                         <Field 
@@ -95,6 +102,7 @@ class AccountInformationForm extends Component {
                             placeholder="New Password" 
                             name="new" 
                             component={FormInputs} 
+                            key={1}
                         />,
 
                         <Field 
@@ -103,7 +111,29 @@ class AccountInformationForm extends Component {
                             title="Confirm Password" 
                             placeholder="Confirm Password" 
                             name="confirm" 
-                            component={FormInputs} 
+                            component={FormInputs}
+                            key={2}
+                        />,
+
+                        <Field
+                            className="account-information-form__cancel"
+                            onClick={() => this.toggleChangePasswordFields()}
+                            type="button"
+                            title="Cancel"
+                            name="cancel"
+                            short={true}
+                            component={FormButtons}
+                            key={3}
+                        />,
+
+                        <Field
+                            className="account-information-form__update-information"
+                            onClick={() => this.toggleChangePasswordFields()}
+                            type="submit"
+                            title="Update Information"
+                            name="update-information"
+                            component={FormButtons}
+                            key={4}
                         />
                     ]
                     :
@@ -117,6 +147,8 @@ class AccountInformationForm extends Component {
                         component={LongGrayButton}
                     />
                 }
+
+                <div className="account-information-form__line"></div>
             </form> 
         )
     }
