@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-class FormButtons extends Component {
+export class FormButtons extends Component {
     constructor(props) {
         super(props);
     }
@@ -22,4 +22,26 @@ class FormButtons extends Component {
     }
 }
 
-export default FormButtons;
+export class LongGrayButton extends Component {
+    constructor() {
+        super();
+    }
+
+    render() {
+        const { className, type, labelTitle, title, input, onClick, short} = this.props
+
+        return (
+            <div className={`${className} form-button-long-gray`}>
+                <label className="form-button-long-gray__label">{labelTitle}</label>
+                <button className="form-button-long-gray__button" 
+                    type={type} 
+                    {...input} 
+                    onClick={onClick}
+                >
+                    {title}
+                </button>
+            </div>
+        )
+    }
+}
+

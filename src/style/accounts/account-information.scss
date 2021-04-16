@@ -41,4 +41,8 @@
         @include formZipStateHelper();
         transform: translateX(226px);
     }
+
+    &__change-password {
+        transform: translateY(38px);
+    }
 }

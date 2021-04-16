@@ -4,8 +4,7 @@ import { reduxForm, Field} from 'redux-form';
 import history from '../../history';
 
 import FormInputs from '../formFields/formInputs';
-import FormButtons from '../formFields/formButtons';
-
+import { FormButtons, LongGrayButton } from '../formFields/formButtons';
 
 class AccountInformationForm extends Component {
     constructor() {
@@ -69,18 +68,15 @@ class AccountInformationForm extends Component {
                     component={FormInputs} 
                 />
 
-                
-                
-                
-                
-                {/* <Field
-                    className="account-information-form__login"
-                    onClick={() => { history.push('/account') }}
-                    type="login"
-                    title="Login"
-                    name="login"
-                    component={FormButtons}
-                /> */}
+                <Field
+                    className="account-information-form__change-password"
+                    onClick={() => console.log("tryna edit passwords") }
+                    type="button"
+                    labelTitle="Password"
+                    title="Change Password"
+                    name="change-password"
+                    component={LongGrayButton}
+                />
             </form> 
         )
     }
