@@ -16,6 +16,7 @@ import history from './history';
 import SignUp from './components/auth/signup';
 import SignIn from './components/auth/signin';
 import Account from './components/account/account';
+import Shop from './components/shop/shop';
 
 function main() {
   ReactDOM.render(
@@ -29,6 +30,8 @@ function main() {
             <Route path="/signup" component={SignUp} />
 
             <Route path="/account" component={Account} />
+
+            <Route path="/shop" component={Shop} />
           </Switch>
         </Layout>
       </Router>

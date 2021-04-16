@@ -20,13 +20,18 @@ body {
 
 @import 'layout.scss';
 @import 'headerNavbar.scss';
+@import './pageTitle.scss';
+@import './formFields.scss';
+@import './details.scss';
+
+// AUTH
 @import './auth/signin.scss';
 @import './auth/signup.scss';
 
+// ACCOUNT INFO
 @import './accounts/account.scss';
 @import './accounts//purchaseHistory.scss';
 @import './accounts//account-information.scss';
 
-@import './pageTitle.scss';
-@import './formFields.scss';
-@import './details.scss';
+// SHOP
+@import './shop/shop.scss';
