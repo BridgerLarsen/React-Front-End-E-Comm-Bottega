@@ -4,7 +4,7 @@ import { reduxForm, Field} from 'redux-form';
 import history from '../../history';
 
 import FormInputs from '../formFields/formInputs';
-import FormButtons from '../formFields/formButtons';
+import { FormButtons } from '../formFields/formButtons';
 import Details from '../details';
 
 class SignUpForm extends Component {

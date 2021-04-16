@@ -1,14 +1,22 @@
 import React, { Component } from 'react';
 import { reduxForm, Field} from 'redux-form';
 
-import history from '../../history';
-
 import FormInputs from '../formFields/formInputs';
-import { FormButtons, LongGrayButton } from '../formFields/formButtons';
+import { LongGrayButton } from '../formFields/formButtons';
 
 class AccountInformationForm extends Component {
     constructor() {
         super();
+
+        this.state = {
+            showPasswords: false
+        }
+    }
+
+    toggleChangePasswordFields() {
+        this.setState({
+            showPasswords: true
+        })
     }
 
     render() {
@@ -68,15 +76,47 @@ class AccountInformationForm extends Component {
                     component={FormInputs} 
                 />
 
-                <Field
-                    className="account-information-form__change-password"
-                    onClick={() => console.log("tryna edit passwords") }
-                    type="button"
-                    labelTitle="Password"
-                    title="Change Password"
-                    name="change-password"
-                    component={LongGrayButton}
-                />
+                {
+                    this.state.showPasswords ? 
+                    [
+                        <Field 
+                            className="account-information-form__current" 
+                            type="password" 
+                            title="Current Password" 
+                            placeholder="Current Password" 
+                            name="current" 
+                            component={FormInputs} 
+                        />,
+                        
+                        <Field 
+                            className="account-information-form__new" 
+                            type="password" 
+                            title="New Password" 
+                            placeholder="New Password" 
+                            name="new" 
+                            component={FormInputs} 
+                        />,
+
+                        <Field 
+                            className="account-information-form__confirm" 
+                            type="password" 
+                            title="Confirm Password" 
+                            placeholder="Confirm Password" 
+                            name="confirm" 
+                            component={FormInputs} 
+                        />
+                    ]
+                    :
+                    <Field
+                        className="account-information-form__change-password"
+                        onClick={() => this.toggleChangePasswordFields()}
+                        type="button"
+                        labelTitle="Password"
+                        title="Change Password"
+                        name="change-password"
+                        component={LongGrayButton}
+                    />
+                }
             </form> 
         )
     }
