@@ -1,12 +1,13 @@
 import {
     SET_SHOP_PRODUCTS,
-    GET_SHOP_CATEGORIES
+    GET_SHOP_CATEGORIES,
+    FILTER_PRODUCTS_WITH_CATEGORY_ID
 } from '../actions/types';
 
 const INITIAL_STATE = {
     products: [],
-    productsSelected: [],
-    categories: []
+    categories: [],
+    filteredProducts: []
 }
 
 export default function(state = INITIAL_STATE, action) {
@@ -20,6 +21,19 @@ export default function(state = INITIAL_STATE, action) {
             return ({
                 ...state,
                 categories: action.payload
+            })
+        case FILTER_PRODUCTS_WITH_CATEGORY_ID:
+            var filteredProducts = [];
+
+            state.products.map(product => {
+                if (product.belongsTo.includes(action.payload)) {
+                    filteredProducts.push(product);
+                }
+            })
+
+            return ({
+                ...state,
+                filteredProducts
             })
         default: return state;
     }

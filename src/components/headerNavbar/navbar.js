@@ -7,6 +7,12 @@ class Navbar extends Component {
     constructor() {
         super();
     } 
+
+    handleOnClick(link) {
+        this.props.changeNavbarActive(link._id)
+        this.props.filterProductsWithCategoryId(link._id);
+    }
+
     render() {
         return (
             <div className="navbar">
@@ -16,7 +22,7 @@ class Navbar extends Component {
                             <a 
                                 className={`navbar__link ${link.active ? "green-text" : null}`} 
                                 key={index} 
-                                onClick={() => this.props.changeNavbarActive(link._id) }
+                                onClick={() => this.handleOnClick(link)}
                             >
                                 {link.title}    
                             </a>

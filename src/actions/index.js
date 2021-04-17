@@ -12,7 +12,9 @@ import {
 import {
     setShopLinks,
     setShopProducts,
-    getShopCategories
+    getShopCategories,
+    filterProductsWithCategoryId
+    
 } from './shop';
 
 export {
@@ -25,5 +27,7 @@ export {
 
     setShopLinks,
     setShopProducts,
-    getShopCategories
+    getShopCategories,
+    filterProductsWithCategoryId
+
 };

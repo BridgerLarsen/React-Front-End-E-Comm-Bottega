@@ -1,7 +1,8 @@
 import {
     SET_NAVBAR_LINKS,
     SET_SHOP_PRODUCTS,
-    GET_SHOP_CATEGORIES
+    GET_SHOP_CATEGORIES,
+    FILTER_PRODUCTS_WITH_CATEGORY_ID
 } from './types';
 
 const categories = [
@@ -46,6 +47,13 @@ export function getShopCategories() {
     return ({
         type: GET_SHOP_CATEGORIES,
         payload: categories
+    })
+}
+
+export function filterProductsWithCategoryId(_id) {
+    return ({
+        type: FILTER_PRODUCTS_WITH_CATEGORY_ID,
+        payload: _id
     })
 }
 
