@@ -1,48 +1,58 @@
 import {
     SET_NAVBAR_LINKS,
-    SET_SHOP_PRODUCTS
+    SET_SHOP_PRODUCTS,
+    GET_SHOP_CATEGORIES
 } from './types';
 
-export function fetchShopCategories() {
+const categories = [
+    {
+        _id: 0,
+        title: 'All',
+        active: true
+    },
+    {
+        _id: 1,
+        title: 'JavaScript',
+        active: false
+    },
+    {
+        _id: 2,
+        title: 'UI/UX',
+        active: false
+    },
+    {
+        _id: 3,
+        title: 'Linux',
+        active: false
+    },
+    {
+        _id: 4,
+        title: 'Python',
+        active: false
+    },
+    {
+        _id: 5,
+        title: 'UML',
+        active: false
+    },
+    {
+        _id: 6,
+        title: 'Ruby',
+        active: false
+    },
+]
+
+export function getShopCategories() {
+    return ({
+        type: GET_SHOP_CATEGORIES,
+        payload: categories
+    })
+}
+
+export function setShopLinks() {
     return ({
         type: SET_NAVBAR_LINKS,
-        payload: [
-            {
-                _id: 0,
-                title: 'All',
-                active: true
-            },
-            {
-                _id: 1,
-                title: 'JavaScript',
-                active: false
-            },
-            {
-                _id: 2,
-                title: 'UI/UX',
-                active: false
-            },
-            {
-                _id: 3,
-                title: 'Linux',
-                active: false
-            },
-            {
-                _id: 4,
-                title: 'Python',
-                active: false
-            },
-            {
-                _id: 5,
-                title: 'UML',
-                active: false
-            },
-            {
-                _id: 6,
-                title: 'Ruby',
-                active: false
-            },
-        ]
+        payload: categories
     })
 }
 

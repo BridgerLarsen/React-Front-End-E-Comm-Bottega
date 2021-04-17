@@ -17,7 +17,8 @@ class Shop extends Component {
             }
         ]
 
-        this.props.fetchShopCategories();
+        this.props.setShopLinks();
+        this.props.getShopCategories();
         this.props.setHeaderLinks(headerLinks);
 
         // filter products with links
@@ -36,7 +37,9 @@ class Shop extends Component {
 }
 
 function mapStateToProps(state) {
-    return state;
+    return {
+        navBarLinks: state.headerNavBar.navBarLinks
+    }
 }
 
 Shop = connect(mapStateToProps, actions)(Shop)
