@@ -27,8 +27,8 @@ class Shop extends Component {
         this.props.setShopProducts();
     }
 
-    handleSubmit(fields) {
-        console.log(fields);
+    handleSubmit = (fields) => { 
+        this.props.filterProductsWithQuery(fields);
     }
 
     render() {

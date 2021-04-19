@@ -2,7 +2,8 @@ import {
     SET_NAVBAR_LINKS,
     SET_SHOP_PRODUCTS,
     GET_SHOP_CATEGORIES,
-    FILTER_PRODUCTS_WITH_CATEGORY_ID
+    FILTER_PRODUCTS_WITH_CATEGORY_ID,
+    FILTER_PRODUCTS_WITH_QUERY
 } from './types';
 
 const categories = [
@@ -42,6 +43,13 @@ const categories = [
         active: false
     },
 ]
+
+export function filterProductsWithQuery(fields) {
+    return ({
+        type: FILTER_PRODUCTS_WITH_QUERY,
+        payload: fields
+    })
+}
 
 export function getShopCategories() {
     return ({

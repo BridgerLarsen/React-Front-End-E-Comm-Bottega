@@ -13,8 +13,8 @@ import {
     setShopLinks,
     setShopProducts,
     getShopCategories,
-    filterProductsWithCategoryId
-    
+    filterProductsWithCategoryId,
+    filterProductsWithQuery
 } from './shop';
 
 export {
@@ -28,6 +28,6 @@ export {
     setShopLinks,
     setShopProducts,
     getShopCategories,
-    filterProductsWithCategoryId
-
+    filterProductsWithCategoryId,
+    filterProductsWithQuery
 };
