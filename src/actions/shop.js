@@ -58,10 +58,11 @@ export function filterProductsWithCategoryId(_id) {
 }
 
 export function setShopLinks() {
-    return ({
-        type: SET_NAVBAR_LINKS,
-        payload: categories
-    })
+        return ({
+            type: SET_NAVBAR_LINKS,
+            payload: categories
+        })
+    
 }
 
 export function setShopProducts() {
