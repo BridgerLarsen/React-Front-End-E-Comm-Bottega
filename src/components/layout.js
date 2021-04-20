@@ -3,13 +3,14 @@ import React, { Component } from 'react';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import {
   faPlus,
-  faMinus
+  faMinus,
+  faTimes
 } from '@fortawesome/free-solid-svg-icons';
 
 import Header from './headerNavbar/header';
 import Navbar from './headerNavbar/navbar';
 
-library.add(faPlus, faMinus);
+library.add(faPlus, faMinus, faTimes);
 
 class Layout extends Component {
   render() {
