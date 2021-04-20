@@ -18,11 +18,36 @@ function CartContent(props) {
             </div>
 
             <div className="cart-content__products">
-
+                {
+                    props.products.map(product => {
+                        return (
+                            <h1 key={product}>
+                                {product}
+                            </h1>
+                        )
+                    })
+                }
             </div>
 
-            <div className="cart-content__footer">
+            <CartFooter  className="cart-content__footer" />
+        </div>
+    )
+}
 
+function CartFooter(props) {
+    const price = 7.96
+    return (
+        <div className={`${props.className} cart-footer`}>
+            <a className="cart-footer__checkout">
+                Checkout
+            </a>
+
+            <div className="cart-footer__subtotal">
+                Subtotal
+            </div>
+
+            <div className="cart-footer__price">
+                {price}
             </div>
         </div>
     )
