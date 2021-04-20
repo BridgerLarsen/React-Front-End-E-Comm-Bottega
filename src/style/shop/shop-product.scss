@@ -1,4 +1,52 @@
 .shop-product {
+    // FRONT AND BACK STYLES TO PLACE ON TOP OF EACH OTHER:
+    display: grid;
+    grid-template-rows: 1/-1;
+    grid-template-columns: 1/-1;
+
+    & > * {
+        grid-row: 1/-1;
+        grid-column: 1/-1;
+    }
+    
+    // CARD FLIP:
+
+    perspective: 150rem;
+    -moz-perspective: 150rem;
+
+    & > * {
+        backface-visibility: hidden;
+        transition: all 0.4s ease;
+    }
+
+    &__back {
+        transform: rotateY(-180deg);
+    }
+
+    &:hover &__front {
+        transform: rotateY(180deg);
+    } 
+
+    &:hover &__back {
+        transform: rotateY(0deg);
+    }
+}
+
+.shop-product__front {
+    height: 314px;
+    width: 240px;
+    display: grid;
+    justify-items: center;
+    align-items: center;
+
+    &__title {
+        font-size: 18px;
+        color: $lightBlack;
+        font-family: 'Titillium Web';
+    }
+}
+
+.shop-product__back {
     height: 314px;
     width: 240px;
     background-color: white;
@@ -61,3 +109,5 @@
         }
     }
 }
+
+
