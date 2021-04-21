@@ -1,5 +1,8 @@
 import React, { Component } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { connect } from 'react-redux';
+
+import * as actions from '../../actions';
 
 import CartProduct from './cartProduct';
 
@@ -23,7 +26,7 @@ function CartContent(props) {
                 {
                     props.products.map(product => {
                         return (
-                            <h1 key={product}>
+                            <h1 key={product._id}>
                                 <CartProduct />
                             </h1>
                         )
@@ -60,14 +63,26 @@ class ShopCart extends Component {
         super();
     }
 
+    componentDidMount() {
+        this.props.fetchCartProducts();
+    }
+
     render() {
         return (
             <div className={`${this.props.className} shop-cart`}>
                 <CartButton className="shop-cart__toggle" icon={<FontAwesomeIcon icon='times' />} />
-                <CartContent className="shop-cart__content" products={[2, 6, 7]} />
+                <CartContent className="shop-cart__content" products={this.props.cartProducts} />
             </div>
         )
     }
 }
+
+function mapStateToProps(state) {
+    return ({
+        cartProducts: state.user.cartProducts
+    })
+}
+
+ShopCart = connect(mapStateToProps, actions)(ShopCart);
 
 export default ShopCart;
