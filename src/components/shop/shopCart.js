@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
+import CartProduct from './cartProduct';
+
 function CartButton(props) {
     return (
         <div className={`${props.className} cart-button`}>
@@ -22,7 +24,7 @@ function CartContent(props) {
                     props.products.map(product => {
                         return (
                             <h1 key={product}>
-                                {product}
+                                <CartProduct />
                             </h1>
                         )
                     })
