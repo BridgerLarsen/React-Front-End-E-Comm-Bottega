@@ -27,7 +27,7 @@ function CartContent(props) {
                     props.products.map(product => {
                         return (
                             <h1 key={product._id}>
-                                <CartProduct />
+                                <CartProduct {...product}  />
                             </h1>
                         )
                     })
