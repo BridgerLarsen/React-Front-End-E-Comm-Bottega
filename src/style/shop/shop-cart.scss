@@ -66,6 +66,16 @@
         grid-column: footer-s/footer-e;
         display: grid;
     }
+
+    ::-webkit-scrollbar {
+        background-color: $lightBlack;
+        width: 10px;
+    }
+
+    ::-webkit-scrollbar-thumb {
+        background-color: #1A1A1A;
+        border-radius: 10px;
+    }
 }
 
 .cart-footer {
