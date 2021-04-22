@@ -37,6 +37,11 @@ class Shop extends Component {
         this.props.setShopProducts();
     }
 
+    componentWillUnmount() {
+        this.props.setNavbarLinks([]);
+        this.props.setHeaderLinks([])
+    }
+
     handleSubmit = (fields) => { 
         this.props.filterProductsWithQuery(fields);
     }
