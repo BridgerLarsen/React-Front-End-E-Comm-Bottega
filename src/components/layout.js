@@ -4,13 +4,14 @@ import { library } from '@fortawesome/fontawesome-svg-core';
 import {
   faPlus,
   faMinus,
-  faTimes
+  faTimes,
+  faShoppingCart
 } from '@fortawesome/free-solid-svg-icons';
 
 import Header from './headerNavbar/header';
 import Navbar from './headerNavbar/navbar';
 
-library.add(faPlus, faMinus, faTimes);
+library.add(faPlus, faMinus, faTimes, faShoppingCart);
 
 class Layout extends Component {
   render() {

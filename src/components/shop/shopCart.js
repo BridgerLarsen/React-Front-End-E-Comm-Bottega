@@ -5,14 +5,7 @@ import { connect } from 'react-redux';
 import * as actions from '../../actions';
 
 import CartProduct from './cartProduct';
-
-function CartButton(props) {
-    return (
-        <div className={`${props.className} cart-button`}>
-            {props.icon}
-        </div>
-    )
-}
+import CartButton from './cartButton';
 
 function CartContent(props) {
     let count = props.products.length;
@@ -69,9 +62,9 @@ class ShopCart extends Component {
 
     render() {
         return (
-            <div className={`${this.props.className} shop-cart`}>
-                <CartButton className="shop-cart__toggle" icon={<FontAwesomeIcon icon='times' />} />
-                <CartContent className="shop-cart__content" products={this.props.cartProducts} />
+            <div id="shop-cart" className={`${this.props.className} shop-cart `}>
+                <CartButton  onClick={this.props.onClick} className="shop-cart__toggle" icon={<FontAwesomeIcon icon='times' />} />
+                <CartContent className={`shop-cart__content ${!this.props.showCart ? "cart-hidden" : null}`} products={this.props.cartProducts} />
             </div>
         )
     }

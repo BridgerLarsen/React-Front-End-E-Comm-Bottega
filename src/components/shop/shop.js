@@ -1,15 +1,23 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 import * as actions from '../../actions';
 
 import ShopSearchBar from './shopSearchBar';
 import ShopProduct from './shopProduct';
 import ShopCart from './shopCart';
+import CartButton from './cartButton'
 
 class Shop extends Component {
     constructor() {
         super();
+
+        this.state = {
+            showCart: false
+        }
+
+    this.toggleCart = this.toggleCart.bind(this);
     }
 
     componentDidMount() {
@@ -33,6 +41,14 @@ class Shop extends Component {
         this.props.filterProductsWithQuery(fields);
     }
 
+    toggleCart() {
+        if (this.state.showCart) {
+            this.setState({ showCart: false })
+        } else if (!this.state.showCart) {
+            this.setState({ showCart: true })
+        }
+    }
+
     render() {
         return (
             <div className="shop">
@@ -46,8 +62,18 @@ class Shop extends Component {
                         })
                     }
                 </div>
-                <ShopCart className="shop__cart" />
-                {/* shop cart button */}
+
+                <ShopCart showCart={this.state.showCart} onClick={this.toggleCart} className="shop__cart" /> 
+                    
+                {
+                    !this.state.showCart ? 
+                    <CartButton 
+                        className="shop__cart-toggle" 
+                        onClick={this.toggleCart} 
+                        icon={<FontAwesomeIcon icon="shopping-cart" />}  
+                    />
+                    : null
+                }
             </div>
         )
     }
