@@ -1,0 +1,22 @@
+.review-form {
+    display: grid;
+    grid-template-rows: [line-s] 26px [line-e buttons-s] 38px [buttons-e];
+    grid-template-columns: [back-s] 137px [back-e space-s] 40px [space-e proceed-s] 1fr [proceed-e] 1fr;
+
+    &__line {
+        grid-row: line-s/line-e;
+        grid-column: 1/-1;
+        border-top: 1px solid $gray;
+        margin-bottom: 24px ;
+    }
+
+    &__proceed {
+        grid-row: proceed-s/proceed-e;
+        grid-column: proceed-s/proceed-e;
+    }
+
+    &__back {
+        grid-row: back-s/back-e;
+        grid-column: back-s/back-e;
+    }
+}
