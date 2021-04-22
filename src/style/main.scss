@@ -13,6 +13,11 @@ html {
 body {
     font-family: 'Open Sans', sans-serif;
     color: #808080;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+    -webkit-tap-highligh-color: transparent;
+
     overflow-x: hidden;
 }
 
