@@ -9,7 +9,7 @@ class ShopProduct extends Component {
     }
 
     render() {
-        const { title, description, price } = this.props;
+        const { title, description, price, onClick } = this.props;
 
         return (
             <div className="shop-product">
@@ -31,9 +31,9 @@ class ShopProduct extends Component {
                     <GreenPriceTag className='shop-product__back__price' title={price} /> 
                     <Quantity className="shop-product__back__quantity" quantity={1} />
 
-                    <div className="shop-product__back__add-to-cart">
+                    <a onClick={onClick} className="shop-product__back__add-to-cart">
                         Add To Cart
-                    </div>
+                    </a>
                 </div>
             </div>
         )

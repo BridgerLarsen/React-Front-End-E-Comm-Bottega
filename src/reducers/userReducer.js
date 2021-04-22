@@ -1,7 +1,8 @@
 import {
     SET_USER_PURCHASES,
     SET_PURCHASE_DETAIL,
-    SET_CART_PRODUCTS
+    SET_CART_PRODUCTS,
+    ADD_PRODUCTS_TO_CART
 } from '../actions/types';
 
 const INITIAL_STATE = {
@@ -43,6 +44,31 @@ export default function(state = INITIAL_STATE, action) {
             return ({
                 ...state,
                 cartProducts: action.payload
+            })
+        case ADD_PRODUCTS_TO_CART:
+            var exists = false;
+            const newCartProducts = action.payload;
+            var cartProducts = [];
+
+            state.cartProducts.map(cartProduct => {
+                if (cartProduct.product._id === newCartProducts._id) {
+                    exists = true;
+                    cartProduct.quantity += 1;
+                }
+                cartProducts.push(cartProduct);
+            })
+
+            if (exists === false) {
+                cartProducts.push({
+                    _id: state.cartProducts.length + 1,
+                    product: newCartProducts,
+                    quantity: 1
+                })
+            }
+
+            return ({
+                ...state,
+                cartProducts
             })
         default: return state;
     }

@@ -41,11 +41,15 @@ class Shop extends Component {
         this.props.filterProductsWithQuery(fields);
     }
 
-    toggleCart() {
-        if (this.state.showCart) {
+    toggleCart(addToCart, product) {
+        if (this.state.showCart && !addToCart) {
             this.setState({ showCart: false })
         } else if (!this.state.showCart) {
             this.setState({ showCart: true })
+        } 
+
+        if (addToCart) {
+            this.props.addProductsToCart(product)
         }
     }
 
@@ -57,19 +61,19 @@ class Shop extends Component {
                     {
                         this.props.filteredProducts.map(product => {
                             return (
-                                <ShopProduct {...product} key={product._id} />
+                                <ShopProduct onClick={() => this.toggleCart(true, product)} {...product} key={product._id} />
                             )
                         })
                     }
                 </div>
 
-                <ShopCart showCart={this.state.showCart} onClick={this.toggleCart} className="shop__cart" /> 
+                <ShopCart showCart={this.state.showCart} onClick={() => this.toggleCart(false)} className="shop__cart" /> 
                     
                 {
                     !this.state.showCart ? 
                     <CartButton 
                         className="shop__cart-toggle" 
-                        onClick={this.toggleCart} 
+                        onClick={() => this.toggleCart(false)} 
                         icon={<FontAwesomeIcon icon="shopping-cart" />}  
                     />
                     : null
