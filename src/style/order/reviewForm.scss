@@ -6,6 +6,7 @@
     &__products {
         grid-row: products-s/products-e;
         grid-column: 1/-1;
+        overflow-y: auto;
     }
 
     &__line {
@@ -23,5 +24,10 @@
     &__back {
         grid-row: back-s/back-e;
         grid-column: back-s/back-e;
+    }
+
+    ::-webkit-scrollbar-thumb {
+        background-color: $lightBlack;
+        border-radius: 10px;
     }
 }
