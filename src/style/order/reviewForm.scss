@@ -1,7 +1,11 @@
 .review-form {
-    display: grid;
-    grid-template-rows: [products-s] 400px [products-e line-s] 26px [line-e buttons-s] 38px [buttons-e];
-    grid-template-columns: [back-s] 137px [back-e space-s] 40px [space-e proceed-s] 1fr [proceed-e] 1fr;
+    &__legend {
+        grid-row: legend-s/legend-e;
+        grid-column: 1/-1;
+        font-size: 14px;
+        border-bottom: 1px solid $gray;
+        padding-bottom: 11px;
+    }
 
     &__products {
         grid-row: products-s/products-e;
@@ -33,5 +37,30 @@
     ::-webkit-scrollbar-thumb {
         background-color: $lightBlack;
         border-radius: 10px;
+    }
+}
+
+.review-form__legend {
+    display: grid;
+    grid-template-columns: 80px [name-s] 1fr [name-s quantity-s] 1fr [quantity-e price-s] .5fr [price-e] 40px;
+    grid-template-rows: [s] 1fr [e];
+    column-gap: 30px;
+    align-items: center;
+
+    & > * {
+        grid-row: s/e;
+    }
+
+    &__name {
+        grid-column: name-s/name-e;
+    }
+
+    &__quantity {
+        grid-column: quantity-s/quantity-e;
+    }
+
+    &__price {
+        grid-column: price-s/price-e;
+        justify-self: end;
     }
 }
