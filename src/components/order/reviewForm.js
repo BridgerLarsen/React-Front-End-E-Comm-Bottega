@@ -5,6 +5,7 @@ import history from '../../history';
 
 import { FormButtons } from '../formFields/formButtons';
 import ReviewProducts from './reviewProducts';
+import GreenPriceTag from '../greenPriceTag';
 
 class ReviewForm extends Component {
     constructor() {
@@ -46,6 +47,28 @@ class ReviewForm extends Component {
                     short={true}
                     component={FormButtons}
                 />
+
+                <div className="review-form__details review-details">
+                    <div className="review-details__subtotal review-detail">
+                        <div className="review-detail__title">Subtotal</div>
+                        <div className="review-detail__price">$7.96</div>
+                    </div>
+
+                    <div className="review-details__tax review-detail">
+                        <div className="review-detail__title">Tax</div>
+                        <div className="review-detail__price">$0.16</div>
+                    </div>
+
+                    <div className="review-details__shipping review-detail">
+                        <div className="review-detail__title">Shipping</div>
+                        <div className="review-detail__price">$0.00</div>
+                    </div>
+
+                    <div className="review-details__total review-detail review-detail-total">
+                        <div className="review-detail__title review-detail__green">Total</div>
+                        <GreenPriceTag className="review-detail__price" title="8.12" /> 
+                    </div>
+                </div>
             </form> 
         )
     }
