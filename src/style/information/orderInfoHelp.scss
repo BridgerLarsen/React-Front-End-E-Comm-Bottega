@@ -1,0 +1,17 @@
+.underlined-title {
+    font-size: 14px;
+    font-weight: 600;
+    border-bottom: 1px solid $gray;
+}
+
+.info-details {
+    &__title {
+        font-size: 14px;
+    }
+
+    &__value {
+        color: $lightGreen;
+        font-weight: 600;
+        font-size: 18px;
+    }
+}

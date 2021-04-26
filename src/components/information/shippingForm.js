@@ -1,8 +1,11 @@
 import React, { Component } from 'react';
 import { reduxForm, Field } from 'redux-form';
 
+import history from '../../history';
+
 import FormInputs from '../formFields/formInputs';
 import { FormButtons } from '../formFields/formButtons';
+import OrderSummary from './orderSummary';
 
 class ShippingForm extends Component {
     constructor(props) {
@@ -60,7 +63,8 @@ class ShippingForm extends Component {
                 <div className="shipping-form__line"></div>
 
                 <Field
-                    className="shipping-form__use-this-address"    
+                    className="shipping-form__use-this-address" 
+                    onClick={() => history.push('/information/payment') }   
                     type="submit"
                     title="Use This Address"
                     name="use-this-address"
@@ -68,13 +72,16 @@ class ShippingForm extends Component {
                 />
 
                 <Field
-                    className="shipping-form__back"    
+                    className="shipping-form__back" 
+                    onClick={() => history.push('/order/review') }   
                     type="button"
                     title="Back"
                     name="back"
                     component={FormButtons}
                     short={true}
                 />
+
+                <OrderSummary className="shipping-form__summary" />
             </form>
         )
     }

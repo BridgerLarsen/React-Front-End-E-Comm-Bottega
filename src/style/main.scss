@@ -30,8 +30,9 @@
 @import './order/reviewForm.scss';
 @import './order/reviewProduct.scss';
 
-// ORDER REVIEW
+// ORDER INFORMATION
 @import './information/shipping.scss';
+@import './information//orderInfoHelp.scss';
 
 html {
     font-size: 62.5%; // 1rem is 10px
