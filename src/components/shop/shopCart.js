@@ -29,13 +29,18 @@ function CartContent(props) {
                 }
             </div>
 
-            <CartFooter  className="cart-content__footer" />
+            <CartFooter  className="cart-content__footer" products={props.products} />
         </div>
     )
 }
 
 function CartFooter(props) {
-    const price = 7.96
+    let subtotal = 0;
+
+    props.products.map(cartproduct => {
+        subtotal += cartproduct.product.price * cartproduct.quantity;
+    })
+
     return (
         <div className={`${props.className} cart-footer`}>
             <a onClick={() => history.push('/order/review') } className="cart-footer__checkout">
@@ -47,7 +52,7 @@ function CartFooter(props) {
             </div>
 
             <div className="cart-footer__price">
-                {price}
+                {subtotal}
             </div>
         </div>
     )
