@@ -14,7 +14,7 @@ class ReviewForm extends Component {
 
     render() {
         const { className, handleSubmit, subtotal } = this.props;
-        
+
         let tax = 0.16;
 
         return (
@@ -33,7 +33,7 @@ class ReviewForm extends Component {
 
                 <Field
                     className="review-form__proceed"
-                    onClick={() => { history.push('/signin') }}
+                    onClick={() => { history.push('/information/shipping') }}
                     type="submit"
                     title="Proceed To Checkout"
                     name="proceed"

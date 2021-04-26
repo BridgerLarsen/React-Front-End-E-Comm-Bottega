@@ -18,6 +18,8 @@ import SignIn from './components/auth/signin';
 import Account from './components/account/account';
 import Shop from './components/shop/shop';
 import Review from './components/order/review';
+import Shipping from './components/information/shipping';
+import Payment from './components/information/payment';
 
 function main() {
   ReactDOM.render(
@@ -34,6 +36,9 @@ function main() {
 
             <Route path="/shop" component={Shop} />
             <Route path="/order/review" component={Review} />
+
+            <Route path="/information/shipping" component={Shipping} />   
+            <Route path="/information/payment" component={Payment} />   
           </Switch>
         </Layout>
       </Router>
