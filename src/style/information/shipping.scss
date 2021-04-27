@@ -5,7 +5,7 @@
     &__form {
         display: grid;
         grid-template-rows: [name-s] 64px [name-e] 35px [address-s] 64px [address-e city-s] 64px [city-e state-zip-s] 64px [state-zip-e] minmax(20px, 81px) [line-s] 26px [line-e buttons-s] 38px [buttons-e];
-        grid-template-columns: [back-s] 137px [back-e space-s] 40px [space-e use-this-address-s] 1fr [use-this-address-e] 1fr;
+        grid-template-columns: [back-s] 137px [back-e space-s] 40px [space-e use-this-address-s] 1fr [use-this-address-e order-summary-s] 1fr [order-summary-e];
         row-gap: 15px;
     }
 }
@@ -51,5 +51,11 @@
     &__back {
         grid-row: buttons-s/buttons-e;
         grid-column: back-s/back-e
+    }
+
+    &__order-summary {
+        grid-row: name-s/name-e;
+        grid-column: order-summary-s/order-summary-e;
+        justify-self: end;
     }
 }   

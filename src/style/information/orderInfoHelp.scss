@@ -5,6 +5,10 @@
 }
 
 .info-details {
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: 1fr 1fr;
+
     &__title {
         font-size: 14px;
     }
@@ -13,5 +17,27 @@
         color: $lightGreen;
         font-weight: 600;
         font-size: 18px;
+    }
+}
+
+.order-summary__total {
+    .info-details {
+        &__title {
+            color: $lightGreen;
+        }
+    }
+}
+
+.order-summary {
+    width: 240px;
+    height: 150px;
+    display: grid;
+    grid-template-rows: 30px 24px 24px 46px;
+    row-gap: 5px;
+
+    .info-details {
+        &__value {
+            justify-self: end;
+        }
     }
 }

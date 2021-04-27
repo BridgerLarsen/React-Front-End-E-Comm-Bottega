@@ -81,7 +81,7 @@ class ShippingForm extends Component {
                     short={true}
                 />
 
-                <OrderSummary className="shipping-form__summary" />
+                <OrderSummary className="shipping-form__order-summary" />
             </form>
         )
     }
