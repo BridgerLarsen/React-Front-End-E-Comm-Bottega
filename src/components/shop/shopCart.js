@@ -10,16 +10,18 @@ import CartProduct from './cartProduct';
 import CartButton from './cartButton';
 
 function CartContent(props) {
-    let count = props.products.length;
+    const { className, products, user } = props;
+
+    let count = products.length;
     return (
-        <div className={`${props.className} cart-content`}>
+        <div className={`${className} cart-content`}>
             <div className="cart-content__title">
                 Cart ({count})
             </div>
 
             <div className="cart-content__products">
                 {
-                    props.products.map(product => {
+                    products.map(product => {
                         return (
                             <h1 key={product._id}>
                                 <CartProduct {...product}  />
@@ -29,21 +31,30 @@ function CartContent(props) {
                 }
             </div>
 
-            <CartFooter  className="cart-content__footer" products={props.products} />
+            <CartFooter user={user} className="cart-content__footer" products={products} />
         </div>
     )
 }
 
 function CartFooter(props) {
+    const { className, user, products} = props;
     let subtotal = 0;
 
-    props.products.map(cartproduct => {
+    products.map(cartproduct => {
         subtotal += cartproduct.product.price * cartproduct.quantity;
     })
 
+    const signedInCheck = () => {
+        if (user.name) {
+            history.push('/order/review')
+        } else {
+            history.push('/signin')
+        }
+    }
+
     return (
-        <div className={`${props.className} cart-footer`}>
-            <a onClick={() => history.push('/order/review') } className="cart-footer__checkout">
+        <div className={`${className} cart-footer`}>
+            <a onClick={() => signedInCheck() } className="cart-footer__checkout">
                 Checkout
             </a>
 
@@ -71,7 +82,11 @@ class ShopCart extends Component {
         return (
             <div id="shop-cart" className={`${this.props.className} shop-cart `}>
                 <CartButton  onClick={this.props.onClick} className="shop-cart__toggle" icon={<FontAwesomeIcon icon='times' />} />
-                <CartContent className={`shop-cart__content ${!this.props.showCart ? "cart-hidden" : null}`} products={this.props.cartProducts} />
+                <CartContent 
+                    className={`shop-cart__content ${!this.props.showCart ? "cart-hidden" : null}`} 
+                    products={this.props.cartProducts} 
+                    user={this.props.user}
+                />
             </div>
         )
     }
@@ -79,7 +94,8 @@ class ShopCart extends Component {
 
 function mapStateToProps(state) {
     return ({
-        cartProducts: state.user.cartProducts
+        cartProducts: state.user.cartProducts,
+        user: state.user.user
     })
 }
 
