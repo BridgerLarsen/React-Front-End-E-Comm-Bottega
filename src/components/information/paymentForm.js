@@ -1,8 +1,11 @@
 import React, { Component } from 'react';
 import { reduxForm, Field } from 'redux-form';
 
+import history from '../../history';
+
 import FormInputs from '../formFields/formInputs';
 import { FormButtons } from '../formFields/formButtons';
+import OrderSummary from './orderSummary';
 
 class PaymentForm extends Component {
     constructor(props) {
@@ -11,70 +14,64 @@ class PaymentForm extends Component {
 
     render() {
         return (
-            <form onSubmit={this.props.handleSubmit} className={`${this.props.className} shipping-form`}>
+            <form onSubmit={this.props.handleSubmit} className={`${this.props.className} payment-form`}>
                 <Field 
                     className="payment-form__name"
                     type="name"
-                    title="Name"
+                    title="Name on Credit Card"
                     placeholder="Name"
                     name="name"
                     component={FormInputs}
                 />
 
                 <Field 
-                    className="payment-form__address"
-                    type="address"
-                    title="Street Address"
-                    placeholder="Street Address"
-                    name="address"
+                    className="payment-form__card"
+                    type="card"
+                    title="Credit Card Number"
+                    placeholder="____-____-____-____"
+                    name="card"
                     component={FormInputs}
                 />
 
                 <Field 
-                    className="payment-form__city"
-                    type="city"
-                    title="City"
-                    placeholder="City"
-                    name="city"
+                    className="payment-form__expiration"
+                    type="expiration"
+                    title="Expiration Date"
+                    placeholder="MM/YYYY"
+                    name="expiration"
                     component={FormInputs}
                 />
 
                 <Field 
-                    className="payment-form__state"
-                    type="state"
-                    title="State"
-                    placeholder="State"
-                    name="state"
-                    component={FormInputs}
-                />
-
-                <Field 
-                    className="payment-form__zipcode"
-                    type="zipcode"
-                    title="Zipcode"
-                    placeholder="Zipcode"
-                    name="zipcode"
+                    className="payment-form__ccv"
+                    type="ccv"
+                    title="CCV"
+                    placeholder="CCV"
+                    name="ccv"
                     component={FormInputs}
                 />
 
                 <div className="payment-form__line"></div>
 
                 <Field
-                    className="payment-form__use-this-address"    
-                    type="submit"
-                    title="Use This Address"
-                    name="use-this-address"
-                    component={FormButtons}
-                />
-
-                <Field
-                    className="payment-form__back"    
+                    className="payment-form__back" 
+                    onClick={() => history.push('/information/shipping')}
                     type="button"
                     title="Back"
                     name="back"
                     component={FormButtons}
                     short={true}
                 />
+
+                <Field
+                    className="payment-form__pay-complete"    
+                    type="submit"
+                    title="Pay and Complete Order"
+                    name="pay-complete"
+                    component={FormButtons}
+                />
+
+                <OrderSummary className="payment-form__order-summary" /> 
             </form>
         )
     }
