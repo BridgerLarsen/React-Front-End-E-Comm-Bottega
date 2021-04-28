@@ -5,7 +5,7 @@
     &__form {
         display: grid;
         grid-template-rows: [name-s] 64px [name-e card-s] 64px [card-e expiration-ccv-s] 64px [expiration-ccv-e] minmax(20px, 81px) [line-s] 26px [line-e buttons-s] 38px [buttons-e];
-        grid-template-columns: [back-s] 137px [back-e space-s] 40px [space-e pay-complete-s] 1fr [pay-complete-e order-summary-s] 1fr [order-summary-e];
+        grid-template-columns: [back-s] 137px [back-e space-s] 40px [space-e pay-complete-s] 1fr [pay-complete-e order-shipping-summary-s] 1fr [order-shipping-summary-e];
         row-gap: 15px;
     }
 }
@@ -52,7 +52,26 @@
 
     &__order-summary {
         grid-row: name-s;
-        grid-column: order-summary-s/order-summary-e;
+        grid-column: order-shipping-summary-s/order-shipping-summary-e;
         justify-self: end;
     }
+
+    &__shipping-info {
+        grid-row: expiration-ccv-s/expiration-ccv-e;
+        grid-column: order-shipping-summary-s/order-shipping-summary-e;
+        justify-self: end;
+    }
+}
+
+.small-text {
+    font-size: 14px;
+}
+
+.shipping-info {
+    width: 240px;
+    height: 150px;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 30px 24px 24px;
+    row-gap: 5px;
 }
