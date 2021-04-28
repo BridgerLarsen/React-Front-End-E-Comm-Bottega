@@ -8,7 +8,8 @@ import {
     fetchUserPurchases,
     setPurchaseDetail,
     fetchCartProducts,
-    addProductsToCart
+    addProductsToCart,
+    signIn
 } from './user';
 
 import {
@@ -28,6 +29,7 @@ export {
     setPurchaseDetail,
     fetchCartProducts,
     addProductsToCart,
+    signIn,
 
     setShopLinks,
     setShopProducts,

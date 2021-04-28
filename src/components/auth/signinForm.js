@@ -13,6 +13,7 @@ class SignInForm extends Component {
     }
 
     render() {
+        // const { className, handleSubmit } = this.props;
 
         const links = [
             {
@@ -56,7 +57,6 @@ class SignInForm extends Component {
 
                 <Field
                     className="sign-in-form__login"
-                    onClick={() => { history.push('/account') }}
                     type="login"
                     title="Login"
                     name="login"
